@@ -1,11 +1,11 @@
-// Consegna:
-// Dato un array di oggetti letterali con:
-// url dell’immagine
-// titolo
-// descrizione
-// Creare un carosello come nella foto allegata.
-// Milestone 0:
-// Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
+// // Consegna:
+// // Dato un array di oggetti letterali con:
+// // url dell’immagine
+// // titolo
+// // descrizione
+// // Creare un carosello come nella foto allegata.
+// // Milestone 0:
+// // Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
 const images = [
     {
@@ -37,76 +37,3 @@ const images = [
     },
 ];
 
-let activeImageIndex = 0;
-const carousel = document.querySelector('.carousel-image');
-
-
-// creo un if per cui se l'immagine è uguale alla prima nell'array allora aggiungo la classe con display block cosi da farla vedere
-
-for (let index = 0; index < images.length; index++) {
-    let image = document.createElement('img');
-    image.setAttribute('src', `${images[index].url}`);
-    if (index == activeImageIndex) {
-        image.classList.add("active");
-        image.innerHTML = index;
-        // in tutti gli altri casi sarà display none
-    } else if (index > 0) {
-        image.classList.remove("active");
-    };
-
-    carousel.append(image);
-
-
-};
-
-
-const btnStop = document.getElementById('btn-stop');
-const btnPre = document.getElementById('btn-next');
-btnPre.addEventListener('click', function () {
-    // const clock = setInterval(imgPlay,);
-    // btnStop.addEventListener('click', function () {
-    //     clearInterval(clock);
-    // });
-    const activeImage = document.querySelector('img.active');
-    activeImage.classList.remove('active');
-    console.log(carousel);
-    console.log(activeImage);
-
-    activeImageIndex++;
-
-
-    if (activeImageIndex === images.length) {
-        activeImageIndex = 0;
-    };
-    const nextimage = document.getElementById(activeImageIndex);
-    console.log(nextimage);
-    nextimage.classList.add('active');
-    // activeImage[activeImageIndex].classList.add('active');
-    // console.log(activeImage);
-});
-
-
-
-
-// creo un button stop per fermare (eventualmente) lo scorrimento
-
-
-
-// inserisco la funzione di scorrimento delle immagini all'interno di una funzione che poi inserisco sopra nel setInterval
-
-function imgPlay() {
-    const activeImage = document.querySelector('img.active');
-    activeImage.classList.remove('active');
-    console.log(carousel);
-    console.log(activeImage);
-
-    activeImageIndex++;
-
-
-    if (activeImageIndex === images.length) {
-        activeImageIndex = 0;
-    };
-    const nextimage = document.getElementById(activeImageIndex);
-    console.log(nextimage);
-    nextimage.classList.add('active');
-};

@@ -1,15 +1,23 @@
 .carousel-wrapper .carousel-image img {
-    display: none;
+    /* display: none; */
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top;
     border-radius: 15px;
+    
 }
 
+.carousel-text{
+  position: absolute;  
+  top: 0;
+  right: 0;
+}
 .carousel-image{
+    position: relative;
     height: 150vh;
 }
+
 
 .carousel-wrapper .carousel-image img.active {
     display: block;
