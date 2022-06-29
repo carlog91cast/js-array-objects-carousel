@@ -43,10 +43,9 @@ const carousel = document.querySelector('.carousel-image');
 
 // creo un if per cui se l'immagine è uguale alla prima nell'array allora aggiungo la classe con display block cosi da farla vedere
 
-for (let index = 0; index < imgList.length; index++) {
+for (let index = 0; index < images.length; index++) {
     let image = document.createElement('img');
-    image.setAttribute('src', imgList[index]);
-    image.setAttribute("id", index);
+    image.setAttribute('src', `${images[index].url}`);
     if (index == activeImageIndex) {
         image.classList.add("active");
         image.innerHTML = index;
@@ -64,10 +63,10 @@ for (let index = 0; index < imgList.length; index++) {
 const btnStop = document.getElementById('btn-stop');
 const btnPre = document.getElementById('btn-next');
 btnPre.addEventListener('click', function () {
-    const clock = setInterval(imgPlay, 700);
-    btnStop.addEventListener('click', function () {
-        clearInterval(clock);
-    });
+    // const clock = setInterval(imgPlay,);
+    // btnStop.addEventListener('click', function () {
+    //     clearInterval(clock);
+    // });
     const activeImage = document.querySelector('img.active');
     activeImage.classList.remove('active');
     console.log(carousel);
