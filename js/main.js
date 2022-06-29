@@ -36,5 +36,5 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
-const carousel = document.getElementById('activeImageIndex');
+
 
