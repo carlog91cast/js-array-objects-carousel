@@ -4,23 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&family=Vidaloka&display=swap"
-        rel="stylesheet" />
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>our team</title>
+    <title>carousel array object</title>
 </head>
 
 <body>
+    <main>
+        <div class="container-fluid">
+            <div id="number-wrapper" class="row g-3 p-3">
+                <div class="col-12">
+                    <div class="carousel-wrapper d-flex flex-column w-75 mx-auto">
+                        <h1 class="text-center text-primary">CAROSELLO DI IMMAGINI</h1>
+                        <div class="carousel-image active mb-4">
+                            
+                        </div>
+                        <div class="carousel-navigation d-flex justify-content-between">
+                            <button id="btn-pre" class="btn btn-primary">Previous</button>
+                            <button id="btn-stop" class="btn btn-primary">Stop</button>
+                            <button id="btn-next" class="btn btn-primary">Next</button>
 
-
-
-
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script type="text/javascript"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
