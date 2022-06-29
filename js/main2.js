@@ -4,7 +4,7 @@
 
 
 // inserisco l'array fornito e creo un add event listener sui buttons nell'html per aggancirvi la funzione
-const images = [
+const imgList = [
     {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
         title: 'Svezia',
@@ -42,7 +42,7 @@ const carousel = document.querySelector('.carousel-image');
 
 for (let index = 0; index < imgList.length; index++) {
     let image = document.createElement('img');
-    image.setAttribute('src', imgList[index]);
+    image.setAttribute('src', imgList[index].url);
     image.setAttribute("id", index);
     if (index == activeImageIndex) {
         image.classList.add("active");
