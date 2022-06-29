@@ -115,7 +115,9 @@ btnPre.addEventListener('click', function () {
 
 function imgPlay() {
     const activeImage = document.querySelector('img.active');
+    const activeText = document.querySelector('carousel-image-text.active');
     activeImage.classList.remove('active');
+    activeText.classList.remove('active');
     console.log(carousel);
     console.log(activeImage);
 
@@ -126,7 +128,9 @@ function imgPlay() {
         activeImageIndex = 0;
     };
     const nextimage = document.getElementById(activeImageIndex);
+    
     console.log(nextimage);
     nextimage.classList.add('active');
+    
 };
 
