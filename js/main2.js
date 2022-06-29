@@ -38,21 +38,42 @@ let activeImageIndex = 0;
 const carousel = document.querySelector('.carousel-image');
 
 
+
 // creo un if per cui se l'immagine è uguale alla prima nell'array allora aggiungo la classe con display block cosi da farla vedere
 
 for (let index = 0; index < imgList.length; index++) {
+    // creo gli elementi dell'html
+    let divImage = document.createElement('div');
     let image = document.createElement('img');
+    image.classList.add('w-100');
+    let divText = document.createElement('div');
+    divText.classList.add('carousel-image-text');
+    let imgTitle = document.createElement('h3');
+    imgTitle.innerHTML = imgList[index].title;
+    let imgDescription = document.createElement('p');
+    imgDescription.innerHTML = imgList[index].description;
     image.setAttribute('src', imgList[index].url);
     image.setAttribute("id", index);
+
     if (index == activeImageIndex) {
-        image.classList.add("active");
+        image.classList.add("active"); 
         image.innerHTML = index;
+        divText.classList.add('active');
+        divText.innerHTML = index;
+       
+
         // in tutti gli altri casi sarà display none
     } else if (index > 0) {
         image.classList.remove("active");
-    };
+        divText.classList.remove('active');
 
-    carousel.append(image);
+    };
+    carousel.append(divImage);
+    divImage.append(image);
+    divImage.append(divText);
+    divText.append(imgTitle);
+    divText.append(imgDescription);
+
 
 
 };
@@ -61,7 +82,7 @@ for (let index = 0; index < imgList.length; index++) {
 const btnStop = document.getElementById('btn-stop');
 const btnPre = document.getElementById('btn-next');
 btnPre.addEventListener('click', function () {
-    const clock = setInterval(imgPlay, 700);
+    const clock = setInterval(imgPlay, 3000);
     btnStop.addEventListener('click', function () {
         clearInterval(clock);
     });

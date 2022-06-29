@@ -5,12 +5,33 @@
     object-fit: cover;
     object-position: top;
     border-radius: 15px;
+
 }
 
-.carousel-image{
-    height: 55vh;
+.carousel-image-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: end;
+    color: white;
+}
+.carousel-image-text.active{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: end;
+    color: white;
+}
+
+
+.carousel-image {
+    height: 120vh;
+    position: relative;
 }
 
 .carousel-wrapper .carousel-image img.active {
     display: block;
+
 }
